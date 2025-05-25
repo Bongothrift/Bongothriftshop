@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bongo Thrift Shop</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SolaimanLipi&display=swap');
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            color: #333;
+        }
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffca28;
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a237e;
+            font-size: 2rem;
+            border-left: 6px solid #ffca28;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: #f7f9fc;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+        }
+        .product-img {
+            background-color: #d1d9e6;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6c757d;
+            font-size: 1rem;
+            user-select: none;
+        }
+        .product-content {
+            padding: 20px 25px;
+            flex-grow: 1;
+        }
+        .product-name {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #1a237e;
+        }
+        .product-price {
+            font-weight: 600;
+            color: #43a047;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .order-btn {
+            background-color: #ffca28;
+            color: #1a237e;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 202, 40, 0.5);
+        }
+        .order-btn:hover {
+            background-color: #f9a825;
+        }
+        footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 1rem;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+            margin-top: 50px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 12px;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #ffca28;
+        }
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 10px;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script>
+        function orderProduct(productName) {
+            alert(productName + " অর্ডার করার জন্য ধন্যবাদ! শীঘ্রই আপনার সাথে যোগাযোগ করা হবে।");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bongo Thrift Shop</h1>
+        <nav>
+            <a href="#">হোম</a>
+            <a href="#">পণ্যসমূহ</a>
+            <a href="#">যোগাযোগ</a>
+        </nav>
+    </header>
+    <main>
+        <h2>পণ্যের তালিকা</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img">ছবি আসবে</div>
+                <div class="product-content">
+                    <div class="product-name">শার্ট</div>
+                    <div class="product-price">৳২০০ - ৫০০</div>
+                    <button class="order-btn" onclick="orderProduct('শার্ট')">অর্ডার করুন</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">ছবি আসবে</div>
+                <div class="product-content">
+                    <div class="product-name">প্যন্ট</div>
+                    <div class="product-price">৳৩০০ - ৫০০</div>
+                    <button class="order-btn" onclick="orderProduct('প্যন্ট')">অর্ডার করুন</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">ছবি আসবে</div>
+                <div class="product-content">
+                    <div class="product-name">পাঞ্জাবী</div>
+                    <div class="product-price">৳৩০০ - ৫০০</div>
+                    <button class="order-btn" onclick="orderProduct('পাঞ্জাবী')">অর্ডার করুন</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">ছবি আসবে</div>
+                <div class="product-content">
+                    <div class="product-name">গেঞ্জি</div>
+                    <div class="product-price">৳১০০ - ৩০০</div>
+                    <button class="order-btn" onclick="orderProduct('গেঞ্জি')">অর্ডার করুন</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">ছবি আসবে</div>
+                <div class="product-content">
+                    <div class="product-name">শাড়ী</div>
+                    <div class="product-price">৳৫০০ - ২০০০</div>
+                    <button class="order-btn" onclick="orderProduct('শাড়ী')">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; ২০২৫ Bongo Thrift Shop. সর্বস্বত্ব সংরক্ষিত।
+        <div class="social-icons">
+            <a href="#" title="Facebook">&#x1F464;</a>
+            <a href="#" title="Twitter">&#x1F426;</a>
+            <a href="#" title="Instagram">&#x1F4F7;</a>
+        </div>
+    </footer>
+</body>
+</html>
